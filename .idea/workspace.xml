@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03a45c72-a258-456c-8e94-3c8e23f62a97" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/OwlUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/SysmlUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/eaapi.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sysml.eapx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sysml.ldb" afterDir="false" />
+    <list default="true" id="03a45c72-a258-456c-8e94-3c8e23f62a97" name="变更" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/test/java/OWLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/OwlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/OwlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SysmlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SysmlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/out/sysml2owl.owl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/out/sysml2owl.owl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sysml.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sysml.eapx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sysml.ldb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sysml.ldb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +67,16 @@
       <recent name="C:\Users\xmy\Desktop\SysML2OWL\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="应用程序.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="SysML2OWL" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OWLTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OWLTest" />
       <module name="SysML2OWL" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -94,7 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.App" />
+        <item itemvalue="应用程序.OWLTest" />
         <item itemvalue="应用程序.SysmlUtils" />
       </list>
     </recent_temporary>
@@ -107,8 +111,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683957311643</updated>
-      <workItem from="1683957312892" duration="8873000" />
+      <workItem from="1683957312892" duration="15405000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1683969233483</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683969233483</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,5 +128,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

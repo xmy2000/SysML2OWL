@@ -3,6 +3,7 @@ package utils;
 import org.apache.jena.ontology.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFWriterI;
+import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.XSD;
 
 import java.io.FileOutputStream;
@@ -58,18 +59,28 @@ public class OwlUtils {
     public static ObjectProperty createObjectProperty(OntModel ontModel, OntClass sourceClass, OntClass targetClass, String relationName) throws IOException {
         String nameSpace = getNameSpace();
         ObjectProperty newRelation = ontModel.createObjectProperty(nameSpace + relationName);
-        newRelation.addDomain(sourceClass);
-        newRelation.addRange(targetClass);
+        if (sourceClass != null) {
+            newRelation.addDomain(sourceClass);
+        }
+        if (targetClass != null) {
+            newRelation.addRange(targetClass);
+        }
         ontModel2Owl(ontModel);
         return newRelation;
     }
 
-    public static DatatypeProperty createDataProperty(OntModel ontModel, OntClass ontClass, OntResource resource, String propertyName) throws IOException {
+    public static DatatypeProperty createDataProperty(OntModel ontModel, OntClass ontClass, Resource resource, String propertyName) throws IOException {
         String nameSpace = getNameSpace();
         DatatypeProperty newProperty = ontModel.createDatatypeProperty(nameSpace + propertyName);
         newProperty.addDomain(ontClass);
         newProperty.addRange(resource);
         ontModel2Owl(ontModel);
         return newProperty;
+    }
+
+    public static void removeClass(OntModel ontModel, String classname) throws Exception {
+        OntClass ontClass = ontModel.getOntClass(OwlUtils.getNameSpace() + classname);
+        ontClass.remove();
+        ontModel2Owl(ontModel);
     }
 }

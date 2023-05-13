@@ -1,12 +1,15 @@
 package utils;
 
-import org.apache.jena.ontology.OntClass;
-import org.apache.jena.ontology.OntModel;
-import org.sparx.Collection;
-import org.sparx.Element;
+import org.apache.jena.ontology.*;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.vocabulary.XSD;
+import org.sparx.*;
 import org.sparx.Package;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SysmlUtils {
     public static int packageCount = 0;
@@ -14,13 +17,23 @@ public class SysmlUtils {
     public static int activityCount = 0;
     public static int actorCount = 0;
 
+    public static Map<String, Resource> VALUE_TYPE = new HashMap<>() {{
+        put("Integer", XSD.xint);
+        put("String", XSD.xstring);
+        put("Boolean", XSD.xboolean);
+        put("Date", XSD.dateTimeStamp);
+        put("File", XSD.xstring);
+        put("Signal", XSD.xstring);
+        put("Real", XSD.xfloat);
+    }};
+
     public static void processPackage(Package p, OntModel model, OntClass superClass) throws IOException {
         System.out.println("Processing Package: " + p.GetName());
 
         Collection<Package> subPackages = p.GetPackages();
         for (Package subPackage : subPackages) {
             packageCount += 1;
-            OntClass packageClass = OwlUtils.createClass(model, "package" + packageCount, subPackage.GetName());
+            OntClass packageClass = OwlUtils.createClass(model, subPackage.GetName(), subPackage.GetName());
             if (superClass != null) {
                 OwlUtils.addSubClass(model, superClass, packageClass);
             }
@@ -43,9 +56,39 @@ public class SysmlUtils {
 
     public static void processBlock(Element block, OntModel model, OntClass superClass) throws IOException {
         System.out.println("Processing Block: " + block.GetName());
-        blockCount += 1;
-        OntClass blockClass = OwlUtils.createClass(model, "block" + blockCount, block.GetName());
+        OntClass blockClass = model.getOntClass(OwlUtils.getNameSpace() + block.GetName());
+        if (blockClass == null) {
+            blockCount += 1;
+            blockClass = OwlUtils.createClass(model, block.GetName(), block.GetName());
+        }
         OwlUtils.addSubClass(model, superClass, blockClass);
+        Collection<Element> parts = block.GetElements();
+        ObjectProperty hasPart = model.getObjectProperty(OwlUtils.getNameSpace() + "hasPart");
+        for (Element part : parts) {
+            String typeName = (String) part.GetPropertyTypeName();
+            if (typeName.equals("")) {
+                continue;
+            }
+            boolean flag = VALUE_TYPE.containsKey(typeName);
+            if (flag) {
+                DatatypeProperty datatypeProperty = model.getDatatypeProperty(OwlUtils.getNameSpace() + part.GetName());
+                if (datatypeProperty == null) {
+                    datatypeProperty = OwlUtils.createDataProperty(model, blockClass, VALUE_TYPE.get(typeName), part.GetName());
+                }
+                SomeValuesFromRestriction someValuesFromRestriction = model.createSomeValuesFromRestriction(null, datatypeProperty, VALUE_TYPE.get(typeName));
+                blockClass.addSuperClass(someValuesFromRestriction);
+                OwlUtils.ontModel2Owl(model);
+            } else {
+                OntClass partClass = model.getOntClass(OwlUtils.getNameSpace() + typeName);
+                if (partClass == null) {
+                    blockCount += 1;
+                    partClass = OwlUtils.createClass(model, typeName, typeName);
+                }
+                SomeValuesFromRestriction someValuesFromRestriction = model.createSomeValuesFromRestriction(null, hasPart, partClass);
+                blockClass.addSuperClass(someValuesFromRestriction);
+                OwlUtils.ontModel2Owl(model);
+            }
+        }
 
     }
 
@@ -68,10 +111,21 @@ public class SysmlUtils {
         Package model = r.GetModels().GetAt((short) 0);
         Package iof = model.GetPackages().GetByName("IOF");
 //        System.out.println("Processing Package: " + iof.GetName());
-        Package p = iof.GetPackages().GetByName("实体").GetPackages().GetByName("发生体").GetPackages().GetByName("加工过程");
+        Package p = iof.GetPackages().GetByName("实体").GetPackages().GetByName("特定依赖连续体").GetPackages().GetByName("刀具数据");
         Collection<Element> elements = p.GetElements();
-        Element element = elements.GetByName("借用归还");
-        System.out.println(element.GetType());
+        Element element = elements.GetByName("刀具动态属性数据");
+        Collection<Element> elements1 = element.GetElements();
+        for (Element element1 : elements1) {
+            System.out.println(element1.GetName() + element1.GetPropertyTypeName());
+            Properties properties = element1.GetProperties();
+//            for (Object property : properties) {
+//                Property property1 = (Property) property;
+//                System.out.println(property1.GetName() + property1.GetType() + property1.GetValue() + property1.GetObjectType());
+//            }
+        }
+
+
+//        System.out.println(element.GetType());
 //        for (Element e : elements) {
 //            System.out.println(e.GetName());
 //        }

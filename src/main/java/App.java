@@ -1,3 +1,4 @@
+import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -9,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         org.sparx.Repository r = new org.sparx.Repository();
         r.OpenFile("C:\\Users\\xmy\\Desktop\\SysML2OWL\\src\\main\\resources\\sysml.eapx");
         System.out.println("Load EA file...");
@@ -24,9 +25,11 @@ public class App {
         } catch (IOException ioe) {
             System.err.println(ioe);
         }
+        ObjectProperty hasPart = OwlUtils.createObjectProperty(model, null, null, "hasPart");
 
         SysmlUtils.processPackage(iof, model, null);
 
+//        OwlUtils.removeClass(model, "");
         System.out.println("Number of Package: " + SysmlUtils.packageCount);
         System.out.println("Number of Block: " + SysmlUtils.blockCount);
         System.out.println("Number of Activity: " + SysmlUtils.activityCount);

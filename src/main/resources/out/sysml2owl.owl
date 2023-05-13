@@ -1,0 +1,422 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY this 'http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl#'>
+  <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+  <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+  <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>]>
+<rdf:RDF
+    xmlns:rdf="&rdf;"
+    xmlns:owl="&owl;"
+    xmlns="&this;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:xsd="&xsd;">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl"/>
+  <owl:Class rdf:about="&this;block35">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package13"/>
+    </rdfs:subClassOf>
+    <rdfs:label>历史加工记录</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block6">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package8"/>
+    </rdfs:subClassOf>
+    <rdfs:label>移动凭证</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block23">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package12"/>
+    </rdfs:subClassOf>
+    <rdfs:label>修配记录</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package3">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package2"/>
+    </rdfs:subClassOf>
+    <rdfs:label>准备过程</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block15">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package9"/>
+    </rdfs:subClassOf>
+    <rdfs:label>工步</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block59">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package17"/>
+    </rdfs:subClassOf>
+    <rdfs:label>排产调度算法</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block47">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package14"/>
+    </rdfs:subClassOf>
+    <rdfs:label>历史加工记录</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block2">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package8"/>
+    </rdfs:subClassOf>
+    <rdfs:label>异常记录</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block39">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package13"/>
+    </rdfs:subClassOf>
+    <rdfs:label>库存信息</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block27">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package12"/>
+    </rdfs:subClassOf>
+    <rdfs:label>性能测试数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package7">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package1"/>
+    </rdfs:subClassOf>
+    <rdfs:label>普遍依赖连续体</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block19">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package9"/>
+    </rdfs:subClassOf>
+    <rdfs:label>试刀结果</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block62">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package18"/>
+    </rdfs:subClassOf>
+    <rdfs:label>PDM系统</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block50">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package15"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package16">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package15"/>
+    </rdfs:subClassOf>
+    <rdfs:label>工人</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block42">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package13"/>
+    </rdfs:subClassOf>
+    <rdfs:label>组合刀具主数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block30">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package12"/>
+    </rdfs:subClassOf>
+    <rdfs:label>零件主数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block22">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package12"/>
+    </rdfs:subClassOf>
+    <rdfs:label>位置精度特征</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block10">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package8"/>
+    </rdfs:subClassOf>
+    <rdfs:label>采购需求</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package12">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package11"/>
+    </rdfs:subClassOf>
+    <rdfs:label>产品数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block54">
+    <rdfs:subClassOf rdf:resource="&this;package16"/>
+    <rdfs:label>工艺室</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block9">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package8"/>
+    </rdfs:subClassOf>
+    <rdfs:label>采购订单</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block46">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package13"/>
+    </rdfs:subClassOf>
+    <rdfs:label>铰刀属性数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block34">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package13"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具静态属性数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block5">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package8"/>
+    </rdfs:subClassOf>
+    <rdfs:label>生产任务工单</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package4">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package2"/>
+    </rdfs:subClassOf>
+    <rdfs:label>加工过程</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block26">
+    <rdfs:subClassOf rdf:resource="&this;package12"/>
+    <rdfs:label>形状精度特征</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block58">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package17"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具状态监控</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block14">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package9"/>
+    </rdfs:subClassOf>
+    <rdfs:label>工序</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block1">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package8"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具送修单</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block38">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package13"/>
+    </rdfs:subClassOf>
+    <rdfs:label>寿命数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package8">
+    <rdfs:subClassOf rdf:resource="&this;package7"/>
+    <rdfs:label>业务数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block18">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package9"/>
+    </rdfs:subClassOf>
+    <rdfs:label>数控程序</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package17">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package15"/>
+    </rdfs:subClassOf>
+    <rdfs:label>算法</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block61">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package18"/>
+    </rdfs:subClassOf>
+    <rdfs:label>MES系统</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package13">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package11"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block53">
+    <rdfs:subClassOf rdf:resource="&this;package16"/>
+    <rdfs:label>工具室</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block41">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>磨损记录</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block33">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>刀具动态属性数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block21">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package10"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具寿命预测</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package1">
+    <rdfs:label>实体</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block57">
+    <rdfs:subClassOf rdf:resource="&this;package17"/>
+    <rdfs:label>刀具寿命预测</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block13">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package9"/>
+    </rdfs:subClassOf>
+    <rdfs:label>制造过程反馈数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block45">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>铣刀属性数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block37">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>对刀数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block8">
+    <rdfs:subClassOf rdf:resource="&this;package8"/>
+    <rdfs:label>试刀申请</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package5">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package2"/>
+    </rdfs:subClassOf>
+    <rdfs:label>维护过程</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block25">
+    <rdfs:subClassOf rdf:resource="&this;package12"/>
+    <rdfs:label>图纸</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block17">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package9"/>
+    </rdfs:subClassOf>
+    <rdfs:label>工艺路线</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block49">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package15"/>
+    </rdfs:subClassOf>
+    <rdfs:label>供应商</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block4">
+    <rdfs:subClassOf rdf:resource="&this;package8"/>
+    <rdfs:label>排产计划</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block29">
+    <rdfs:subClassOf rdf:resource="&this;package12"/>
+    <rdfs:label>质量检验数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package9">
+    <rdfs:subClassOf rdf:resource="&this;package7"/>
+    <rdfs:label>工艺数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block60">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package18"/>
+    </rdfs:subClassOf>
+    <rdfs:label>ERP系统</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package18">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package15"/>
+    </rdfs:subClassOf>
+    <rdfs:label>系统</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block40">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>材料属性</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block20">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package10"/>
+    </rdfs:subClassOf>
+    <rdfs:label>刀具加工监测</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block52">
+    <rdfs:subClassOf rdf:resource="&this;package16"/>
+    <rdfs:label>修磨中心</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package14">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;package11"/>
+    </rdfs:subClassOf>
+    <rdfs:label>机床数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block44">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>钻头属性数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block32">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>刀具主数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package10">
+    <rdfs:subClassOf rdf:resource="&this;package7"/>
+    <rdfs:label>算法</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block24">
+    <rdfs:subClassOf rdf:resource="&this;package12"/>
+    <rdfs:label>几何特征数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package2">
+    <rdfs:subClassOf rdf:resource="&this;package1"/>
+    <rdfs:label>发生体</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block56">
+    <rdfs:subClassOf rdf:resource="&this;package16"/>
+    <rdfs:label>采购部</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block12">
+    <rdfs:subClassOf rdf:resource="&this;package9"/>
+    <rdfs:label>切削参数</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block48">
+    <rdfs:subClassOf rdf:resource="&this;package14"/>
+    <rdfs:label>机床主数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block36">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>子物料</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block7">
+    <rdfs:subClassOf rdf:resource="&this;package8"/>
+    <rdfs:label>试刀报告</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block28">
+    <rdfs:subClassOf rdf:resource="&this;package12"/>
+    <rdfs:label>精度特征数据</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package6">
+    <rdfs:subClassOf rdf:resource="&this;package2"/>
+    <rdfs:label>设计过程</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block16">
+    <rdfs:subClassOf rdf:resource="&this;package9"/>
+    <rdfs:label>工艺文件</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block3">
+    <rdfs:subClassOf rdf:resource="&this;package8"/>
+    <rdfs:label>拣配清单</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block51">
+    <rdfs:subClassOf rdf:resource="&this;package16"/>
+    <rdfs:label>仓库</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package15">
+    <rdfs:subClassOf rdf:resource="&this;package1"/>
+    <rdfs:label>独立连续体</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block31">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>修磨记录</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block63">
+    <rdfs:subClassOf rdf:resource="&this;package18"/>
+    <rdfs:label>刀具管控系统</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block11">
+    <rdfs:subClassOf rdf:resource="&this;package9"/>
+    <rdfs:label>刀具清单</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;package11">
+    <rdfs:subClassOf rdf:resource="&this;package1"/>
+    <rdfs:label>特定依赖连续体</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block55">
+    <rdfs:subClassOf rdf:resource="&this;package16"/>
+    <rdfs:label>车间产线</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&this;block43">
+    <rdfs:subClassOf rdf:resource="&this;package13"/>
+    <rdfs:label>车刀属性数据</rdfs:label>
+  </owl:Class>
+</rdf:RDF>

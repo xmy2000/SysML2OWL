@@ -9,10 +9,9 @@ import java.util.Properties;
 public class PropertiesReader {
     public static String getProperty(String key) throws IOException {
         Properties properties = new Properties();
-        InputStream in= new BufferedInputStream(new FileInputStream("src/main/resources/config.properties"));
+        InputStream in = new BufferedInputStream(new FileInputStream("src/main/resources/config.properties"));
         properties.load(in);
-        String property = properties.getProperty(key);
-        return property;
+        return properties.getProperty(key);
     }
 
     public static void main(String[] args) throws IOException {

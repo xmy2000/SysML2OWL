@@ -2,9 +2,11 @@ package utils;
 
 import org.apache.jena.ontology.*;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFWriterI;
 import org.apache.jena.rdf.model.Resource;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -15,6 +17,13 @@ public class OwlUtils {
 
     public static String getNameSpace() throws IOException {
         return getSourceName() + "#";
+    }
+
+    public static OntModel initModel() throws IOException {
+        OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        String filePath = PropertiesReader.getProperty("base_owl_path");
+        model.read(new FileInputStream(filePath), OwlUtils.getSourceName(), "RDF/XML");
+        return model;
     }
 
     public static void ontModel2Owl(OntModel ontModel) throws IOException {
@@ -81,5 +90,11 @@ public class OwlUtils {
         OntClass ontClass = ontModel.getOntClass(OwlUtils.getNameSpace() + classname);
         ontClass.remove();
         ontModel2Owl(ontModel);
+    }
+
+    public static void addRestriction(OntModel model, Property property, OntClass source, Resource target) throws IOException {
+        SomeValuesFromRestriction someValuesFromRestriction = model.createSomeValuesFromRestriction(null, property, target);
+        source.addSuperClass(someValuesFromRestriction);
+        OwlUtils.ontModel2Owl(model);
     }
 }

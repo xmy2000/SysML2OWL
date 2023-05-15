@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03a45c72-a258-456c-8e94-3c8e23f62a97" name="变更" comment="完成主体功能开发，待完成：代码重构、注释添加" />
+    <list default="true" id="03a45c72-a258-456c-8e94-3c8e23f62a97" name="变更" comment="完成主体功能开发，待完成：代码重构、注释添加">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/PropertiesReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Sysml2owl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/OwlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/OwlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SysmlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SysmlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/out/sysml2owl.owl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/out/sysml2owl.owl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,6 +61,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,6 +85,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PropertiesReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.PropertiesReader" />
+      <module name="SysML2OWL" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SysMLTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SysMLTest" />
       <module name="SysML2OWL" />
@@ -78,8 +105,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SysmlUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="utils.SysmlUtils" />
+    <configuration name="Sysml2owl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.Sysml2owl" />
       <module name="SysML2OWL" />
       <extension name="coverage">
         <pattern>
@@ -94,9 +121,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.App" />
+        <item itemvalue="应用程序.PropertiesReader" />
         <item itemvalue="应用程序.SysMLTest" />
         <item itemvalue="应用程序.OWLTest" />
-        <item itemvalue="应用程序.SysmlUtils" />
+        <item itemvalue="应用程序.Sysml2owl" />
       </list>
     </recent_temporary>
   </component>
@@ -110,6 +138,7 @@
       <updated>1683957311643</updated>
       <workItem from="1683957312892" duration="15405000" />
       <workItem from="1684043356489" duration="15926000" />
+      <workItem from="1684115168201" duration="6961000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1683969233483</created>

@@ -122,43 +122,29 @@
   </owl:Class>
   <owl:Class rdf:about="&this;试刀">
     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;试刀结果"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasOutput"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
       <owl:Class rdf:about="&this;设计过程"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;申请试刀"/>
+          <owl:Class rdf:about="&this;试刀报告"/>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:onProperty rdf:resource="&this;hasOutput"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label>action: 试刀</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;选择试刀的刀具与零件"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;试刀"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;试刀提醒"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;试刀确认"/>
+          <owl:Class rdf:about="&this;申请试刀"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -174,23 +160,31 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;试刀报告"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasOutput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;试刀结果"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasOutput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
           <owl:Class rdf:about="&this;借用出库"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;试刀确认"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;订单监控"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;试刀提醒"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -206,8 +200,14 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;订单监控"/>
+          <owl:Class rdf:about="&this;选择试刀的刀具与零件"/>
         </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;试刀"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -260,36 +260,11 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;机床主数据"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasInput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
           <owl:Class rdf:about="&this;图纸"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasInput"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;工艺路线"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasInput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;审核"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>action: 刀具选配</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
@@ -300,43 +275,22 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;修改成功"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl#新增/修改条目"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom>
           <owl:Class rdf:about="&this;保存"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;审核"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;发布"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;设计过程"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;删除版本n"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;查询历史刀具清单"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -352,10 +306,70 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;刀具清单"/>
+          <owl:Class rdf:about="&this;审核"/>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasOutput"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;退回"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>action: 刀具选配</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;工艺路线"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasInput"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;查询历史刀具清单"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;删除版本n"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;发布"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;机床主数据"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasInput"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;刀具主数据"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasInput"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;设计过程"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -363,6 +377,14 @@
           <owl:Class rdf:about="http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl#新增/修改条目"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;刀具清单"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasOutput"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -376,30 +398,8 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl#新增/修改条目"/>
+          <owl:Class rdf:about="&this;审核"/>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;刀具主数据"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasInput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;退回"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;修改成功"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -549,11 +549,9 @@
   <owl:Class rdf:about="&this;试刀结果">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;切削参数"/>
-        </owl:someValuesFrom>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="&this;支持"/>
+          <owl:DatatypeProperty rdf:about="&this;机床编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -561,15 +559,17 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;试刀记录"/>
+          <owl:DatatypeProperty rdf:about="&this;试刀内容描述"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;切削参数"/>
+        </owl:someValuesFrom>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工时间"/>
+          <owl:ObjectProperty rdf:about="&this;支持"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -589,7 +589,15 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;机床编号"/>
+          <owl:DatatypeProperty rdf:about="&this;试刀记录"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;零件编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -603,9 +611,9 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;试刀内容描述"/>
+          <owl:DatatypeProperty rdf:about="&this;加工时间"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -619,16 +627,16 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="&this;刀具主数据">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;零件编号"/>
+          <owl:DatatypeProperty rdf:about="&this;刀具类型"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="&this;刀具主数据">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
@@ -641,16 +649,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;图片"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 刀具主数据</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;模型"/>
+          <owl:DatatypeProperty rdf:about="&this;刀具描述"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -664,23 +663,13 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具类型"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:someValuesFrom>
           <owl:Class rdf:about="&this;刀具静态属性数据"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;刀具数据"/>
-    </rdfs:subClassOf>
+    <rdfs:label>block: 刀具主数据</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
@@ -693,7 +682,18 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具描述"/>
+          <owl:DatatypeProperty rdf:about="&this;图片"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;刀具数据"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;模型"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -827,7 +827,15 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;精度"/>
+          <owl:DatatypeProperty rdf:about="&this;刃型长度"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;不等齿距"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -846,20 +854,20 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀尖圆弧"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;前角"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="&this;刀具静态属性数据"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;端齿"/>
-        </owl:onProperty>
-      </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -873,32 +881,24 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀尖圆弧"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刃型长度"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;后角"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;精度"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label>block: 铰刀属性数据</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;不等齿距"/>
+          <owl:DatatypeProperty rdf:about="&this;端齿"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -944,8 +944,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;试刀结果"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;试刀机床"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label>block: 试刀报告</rdfs:label>
@@ -958,22 +960,6 @@
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;试刀机床"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;申请单号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
       <owl:Class rdf:about="&this;业务数据"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -981,6 +967,20 @@
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;试刀工单号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;试刀结果"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;申请单号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1093,8 +1093,44 @@
   <owl:Class rdf:about="&this;修磨维护">
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;output-修磨结果"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;input-磨损量"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>action: 修磨维护</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;刀具修磨"/>
+          <owl:Class rdf:about="&this;送修返还"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;刀具送修单"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasInput"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;维护过程"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;送修交接"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -1110,45 +1146,9 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;送修交接"/>
+          <owl:Class rdf:about="&this;刀具修磨"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;刀具送修单"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasInput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>action: 修磨维护</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;送修返还"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;维护过程"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;input-磨损量"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;output-修磨结果"/>
-        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -1199,22 +1199,6 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;型号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;毛坯材料"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;零件描述"/>
         </owl:onProperty>
       </owl:Restriction>
@@ -1231,7 +1215,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;毛坯种类"/>
+          <owl:DatatypeProperty rdf:about="&this;毛坯尺寸"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1239,7 +1223,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;毛坯尺寸"/>
+          <owl:DatatypeProperty rdf:about="&this;型号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1262,7 +1246,23 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;毛坯种类"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:label>block: 工艺路线</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;毛坯材料"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="&this;主数据初始化">
     <rdfs:subClassOf>
@@ -1460,7 +1460,7 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;是否需要试刀"/>
+          <owl:Class rdf:about="&this;工艺内容编制"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -1474,14 +1474,8 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;工艺路线审核"/>
+          <owl:Class rdf:about="&this;是否需要试刀"/>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;工艺路线编制"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1491,8 +1485,14 @@
     <rdfs:label>action: 工艺设计</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;工艺路线编制"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;工艺内容编制"/>
+          <owl:Class rdf:about="&this;工艺路线审核"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -1559,62 +1559,14 @@
   <owl:Class rdf:about="&this;历史加工记录">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;备注"/>
-        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;切削参数"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="&this;机床数据"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;切削液"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工日期"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工零件编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工数量"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工单编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1628,16 +1580,15 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工序"/>
+          <owl:DatatypeProperty rdf:about="&this;切削液"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;操作人"/>
+          <owl:DatatypeProperty rdf:about="&this;工单编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1659,13 +1610,21 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;切削参数"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;加工数量"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label>block: 历史加工记录</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;备注"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
@@ -1678,7 +1637,48 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;工序"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;切削液"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;操作人"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 历史加工记录</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;加工日期"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;加工零件编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1688,7 +1688,43 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;负责人"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;交货日期"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;业务数据"/>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 采购订单</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;刀具描述"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;采购数量"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;订单编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1701,46 +1737,10 @@
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;业务数据"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;负责人"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;供应商"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;采购数量"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 采购订单</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;订单编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;交货日期"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1818,33 +1818,25 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工单编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:DatatypeProperty rdf:about="&this;异常记录"/>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="&this;hasRelation"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;工艺文件编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;生产订单编号"/>
+          <owl:DatatypeProperty rdf:about="&this;完成期限"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;拣配清单"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="&this;hasRelation"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -1860,29 +1852,37 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;零件编号"/>
+          <owl:DatatypeProperty rdf:about="&this;生产订单编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;拣配清单"/>
+          <owl:DatatypeProperty rdf:about="&this;异常记录"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasRelation"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;完成期限"/>
-        </owl:onProperty>
-      </owl:Restriction>
+      <owl:Class rdf:about="&this;业务数据"/>
     </rdfs:subClassOf>
     <rdfs:label>block: 生产任务工单</rdfs:label>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;业务数据"/>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;工单编号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;零件编号"/>
+        </owl:onProperty>
+      </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="&this;发布">
@@ -2155,7 +2155,15 @@
   <owl:Class rdf:about="&this;初始化入库">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;扫码测试"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;序列号生成"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;扫码入库"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2168,9 +2176,9 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;序列号生成"/>
+          <owl:Class rdf:about="&this;刀具"/>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:onProperty rdf:resource="&this;hasInput"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -2182,31 +2190,23 @@
     <rdfs:label>action: 初始化入库</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;重新标刻"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="&this;准备过程"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;扫码入库"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:someValuesFrom>
           <owl:Class rdf:about="&this;激光标刻"/>
         </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="&this;准备过程"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;刀具"/>
-        </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="&this;hasInput"/>
+        <owl:someValuesFrom rdf:resource="&this;扫码测试"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;重新标刻"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -2244,13 +2244,37 @@
   </owl:Class>
   <owl:Class rdf:about="&this;机床主数据">
     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;是否使用组合刀具"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
       <owl:Class rdf:about="&this;机床数据"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;型号"/>
+          <owl:DatatypeProperty rdf:about="&this;主轴接口形式"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;是否外协加工"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;机床编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2264,12 +2288,6 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;历史加工记录"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;机床描述"/>
@@ -2278,9 +2296,16 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
+        <owl:someValuesFrom rdf:resource="&this;历史加工记录"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 机床主数据</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;是否使用组合刀具"/>
+          <owl:DatatypeProperty rdf:about="&this;工种"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2296,32 +2321,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;主轴接口形式"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 机床主数据</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;机床编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工种"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;是否外协加工"/>
+          <owl:DatatypeProperty rdf:about="&this;型号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2406,14 +2406,6 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;目标位置"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;物料编码"/>
         </owl:onProperty>
       </owl:Restriction>
@@ -2422,15 +2414,15 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;移动类型"/>
+          <owl:DatatypeProperty rdf:about="&this;操作时间"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;物料序列号"/>
+          <owl:DatatypeProperty rdf:about="&this;物料数量"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2441,15 +2433,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;操作人"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;操作时间"/>
+          <owl:DatatypeProperty rdf:about="&this;物料序列号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2465,6 +2449,22 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;移动类型"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;操作人"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;源位置"/>
         </owl:onProperty>
       </owl:Restriction>
@@ -2472,9 +2472,9 @@
     <rdfs:label>block: 移动凭证</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;物料数量"/>
+          <owl:DatatypeProperty rdf:about="&this;目标位置"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2484,48 +2484,6 @@
     <rdfs:label>action: 工艺路线审核</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="&this;磨损记录">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;磨损测量位置"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;测量人"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工序"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 磨损记录</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;生产任务工单编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工零件编号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
@@ -2544,9 +2502,51 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;生产任务工单编号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;int"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;加工数量"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;磨损测量位置"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 磨损记录</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;测量人"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;加工零件编号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;工序"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2698,7 +2698,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;直径"/>
+          <owl:DatatypeProperty rdf:about="&this;螺旋角"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2714,7 +2714,32 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;前角"/>
+          <owl:DatatypeProperty rdf:about="&this;刀尖圆弧"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;切削锥长度"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 铣刀属性数据</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;端齿"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl#内冷/外冷"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2730,19 +2755,22 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;螺旋角"/>
+          <owl:DatatypeProperty rdf:about="&this;前角"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label>block: 铣刀属性数据</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;端齿"/>
+          <owl:DatatypeProperty rdf:about="&this;直径"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;刀具静态属性数据"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
@@ -2755,45 +2783,17 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;切削锥长度"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;后角"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl#内冷/外冷"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;刀具静态属性数据"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀尖圆弧"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
   </owl:Class>
   <owl:Class rdf:about="&this;刀具寿命预测">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具材料"/>
+          <owl:DatatypeProperty rdf:about="&this;切深"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -2807,12 +2807,38 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;切削液"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具寿命"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具材料"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;int"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;刀具修磨次数"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:label>block: 刀具寿命预测</rdfs:label>
+    <rdfs:subClassOf rdf:resource="&this;算法"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
@@ -2825,33 +2851,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;切深"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具寿命"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 刀具寿命预测</rdfs:label>
-    <rdfs:subClassOf rdf:resource="&this;算法"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;转速"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;切削液"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3097,13 +3097,15 @@
   <owl:Class rdf:about="&this;零件主数据">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;几何特征数据"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;毛坯形状"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;质量检验数据"/>
+        <owl:someValuesFrom rdf:resource="&this;精度特征数据"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3111,7 +3113,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工艺文件编号"/>
+          <owl:DatatypeProperty rdf:about="&this;毛坯尺寸"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3126,6 +3128,20 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;零件编号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;性能测试数据"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;型号"/>
         </owl:onProperty>
       </owl:Restriction>
@@ -3134,21 +3150,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;毛坯形状"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;图纸"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;零件编号"/>
+          <owl:DatatypeProperty rdf:about="&this;零件材料"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3164,19 +3166,25 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;毛坯材料"/>
+          <owl:DatatypeProperty rdf:about="&this;工艺文件编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;精度特征数据"/>
+        <owl:someValuesFrom rdf:resource="&this;几何特征数据"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;性能测试数据"/>
+        <owl:someValuesFrom rdf:resource="&this;图纸"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;质量检验数据"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3185,23 +3193,15 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;零件材料"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;毛坯尺寸"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;零件名称"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;毛坯材料"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3221,9 +3221,29 @@
   <owl:Class rdf:about="&this;拣配清单">
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;需求时间"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 拣配清单</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;业务数据"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;配送位置"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3237,23 +3257,11 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具编码"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 拣配清单</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;int"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;刀具数量"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;业务数据"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3265,17 +3273,9 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;需求时间"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;配送位置"/>
+          <owl:DatatypeProperty rdf:about="&this;刀具编码"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3326,24 +3326,13 @@
   <owl:Class rdf:about="&this;刀具送修单">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;ABC标识"/>
+          <owl:DatatypeProperty rdf:about="&this;送修时间"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label>block: 刀具送修单</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="&this;业务数据"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具数量"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
@@ -3351,6 +3340,9 @@
           <owl:DatatypeProperty rdf:about="&this;送修原因"/>
         </owl:onProperty>
       </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="&this;业务数据"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3364,15 +3356,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;送修单号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;送修时间"/>
+          <owl:DatatypeProperty rdf:about="&this;承修单位"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3380,7 +3364,23 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;承修单位"/>
+          <owl:DatatypeProperty rdf:about="&this;ABC标识"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具数量"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;送修单号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3388,7 +3388,7 @@
   <owl:Class rdf:about="&this;生产执行">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具借用归还"/>
+        <owl:someValuesFrom rdf:resource="&this;刀具领用"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3398,19 +3398,7 @@
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;更换刀具"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:label>action: 生产执行</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;零件修配"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;结束加工"/>
@@ -3419,7 +3407,7 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;零件加工"/>
+        <owl:someValuesFrom rdf:resource="&this;更换刀具"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3429,6 +3417,12 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;加工过程监控"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;刀具装夹"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3446,13 +3440,19 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具装夹"/>
+        <owl:someValuesFrom rdf:resource="&this;零件加工"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具领用"/>
+        <owl:someValuesFrom rdf:resource="&this;零件修配"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;刀具借用归还"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3461,13 +3461,7 @@
     <rdfs:subClassOf rdf:resource="&this;准备过程"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;采购申请"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;初始化入库"/>
+        <owl:someValuesFrom rdf:resource="&this;实物到货"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3479,7 +3473,19 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;采购状态跟踪"/>
+        <owl:someValuesFrom rdf:resource="&this;退回"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;采购需求"/>
+        <owl:onProperty rdf:resource="&this;hasInput"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;采购申请"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3498,25 +3504,19 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;采购需求"/>
-        <owl:onProperty rdf:resource="&this;hasInput"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;实物到货"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;退回"/>
+        <owl:someValuesFrom rdf:resource="&this;采购状态跟踪"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;采购执行"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;初始化入库"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3560,15 +3560,17 @@
   <owl:Class rdf:about="&this;刀具静态属性数据">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;材料属性"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;标准系列"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;品牌"/>
+          <owl:DatatypeProperty rdf:about="&this;安装尺寸"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3582,10 +3584,8 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;标准系列"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&this;材料属性"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -3600,15 +3600,23 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;表面涂层"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;安装标准"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;安装尺寸"/>
+          <owl:DatatypeProperty rdf:about="&this;品牌"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3618,14 +3626,6 @@
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;标准产品"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;表面涂层"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3723,12 +3723,11 @@
   <owl:Class rdf:about="&this;制造过程反馈数据">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;性能测试数据"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;加工开始时间"/>
+        </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:DatatypeProperty rdf:about="&this;工艺数据"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3739,10 +3738,21 @@
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
+      <owl:DatatypeProperty rdf:about="&this;工艺数据"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工数量"/>
+          <owl:DatatypeProperty rdf:about="&this;工序"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3756,8 +3766,10 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;质量检验数据"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;工艺文件编号"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -3770,17 +3782,21 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;异常记录"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&this;刀具"/>
+        <owl:onProperty rdf:resource="&this;关于"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;磨损记录"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工序"/>
+          <owl:DatatypeProperty rdf:about="&this;零件序列号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3796,38 +3812,28 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工开始时间"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;dateTimeStamp"/>
-        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;加工结束时间"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具"/>
-        <owl:onProperty rdf:resource="&this;关于"/>
+        <owl:someValuesFrom rdf:resource="&this;性能测试数据"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;切削液"/>
+          <owl:DatatypeProperty rdf:about="&this;异常记录"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工艺文件编号"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&this;质量检验数据"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -3838,52 +3844,15 @@
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;磨损记录"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:label>block: 制造过程反馈数据</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;零件序列号"/>
+          <owl:DatatypeProperty rdf:about="&this;加工数量"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="&this;切削参数">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;进给量"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;float"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;切深"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:domain rdf:resource="&this;历史加工记录"/>
-    <rdfs:subClassOf>
-      <owl:DatatypeProperty rdf:about="&this;工艺数据"/>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 切削参数</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
@@ -3892,10 +3861,41 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="&this;切削参数">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;刀具"/>
         <owl:onProperty rdf:resource="&this;关于"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:domain rdf:resource="&this;历史加工记录"/>
+    <rdfs:subClassOf>
+      <owl:DatatypeProperty rdf:about="&this;工艺数据"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;转速"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>block: 切削参数</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;float"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;切深"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;切削液"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:range rdf:resource="&xsd;float"/>
@@ -3903,7 +3903,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;float"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;转速"/>
+          <owl:DatatypeProperty rdf:about="&this;进给量"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -3930,31 +3930,6 @@
   <owl:Class rdf:about="&this;借用归还">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具修磨"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;磨损测量"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具上架"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;修磨入库"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>action: 借用归还</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;送修返还"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
@@ -3967,10 +3942,29 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具报废"/>
+        <owl:someValuesFrom rdf:resource="&this;刀具上架"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;刀具修磨"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;扫码入库"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;磨损测量"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label>action: 借用归还</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;修磨出库"/>
@@ -3979,15 +3973,21 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="&this;送修交接"/>
-        </owl:someValuesFrom>
+        <owl:someValuesFrom rdf:resource="&this;修磨入库"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;扫码入库"/>
+        <owl:someValuesFrom rdf:resource="&this;刀具报废"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="&this;送修交接"/>
+        </owl:someValuesFrom>
         <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4006,15 +4006,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;试刀刀具描述"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;试刀内容"/>
+          <owl:DatatypeProperty rdf:about="&this;申请人"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4031,7 +4023,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;申请人"/>
+          <owl:DatatypeProperty rdf:about="&this;需求刀具数量"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4039,7 +4031,23 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;需求刀具数量"/>
+          <owl:DatatypeProperty rdf:about="&this;零件编码"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;试刀内容"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;试刀刀具描述"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4052,14 +4060,6 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="&this;业务数据"/>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;零件编码"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="&this;新建刀具清单">
     <rdfs:subClassOf rdf:resource="&this;设计过程"/>
@@ -4068,9 +4068,60 @@
   <owl:Class rdf:about="&this;刀具动态属性数据">
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;磨损记录条数"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="&this;当前状态"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;寿命数据"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;修磨记录"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;磨损记录"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;当前位置"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;int"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;加工记录条数"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4090,62 +4141,11 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;磨损记录条数"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;修磨记录"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+    <rdfs:label>block: 刀具动态属性数据</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&this;历史加工记录"/>
         <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="&this;刀具数据"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具序列号"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;当前位置"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;磨损记录"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;寿命数据"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label>block: 刀具动态属性数据</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;int"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工记录条数"/>
-        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -4293,7 +4293,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;加工特征描述"/>
+          <owl:DatatypeProperty rdf:about="&this;工时定额"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4305,22 +4305,24 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label>block: 工序</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;工时定额"/>
+          <owl:DatatypeProperty rdf:about="&this;机床编号"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:label>block: 工序</rdfs:label>
     <rdfs:subClassOf>
       <owl:DatatypeProperty rdf:about="&this;工艺数据"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;刀具清单"/>
-        <owl:onProperty rdf:resource="&this;关联"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;刀具编号"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -4335,21 +4337,7 @@
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;产线"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&this;工步"/>
-        <owl:onProperty rdf:resource="&this;hasPart"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;刀具编号"/>
+          <owl:DatatypeProperty rdf:about="&this;加工特征描述"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -4363,13 +4351,25 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="&this;机床编号"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&this;刀具清单"/>
+        <owl:onProperty rdf:resource="&this;关联"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&this;工步"/>
+        <owl:onProperty rdf:resource="&this;hasPart"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdf:type rdf:resource="&owl;Class"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="&this;产线"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:domain rdf:resource="&this;生产任务工单"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="&this;刀具寿命">

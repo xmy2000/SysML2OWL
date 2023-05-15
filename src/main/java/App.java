@@ -4,6 +4,8 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.sparx.Package;
 import utils.OwlUtils;
+import utils.PropertiesReader;
+import utils.Sysml2owl;
 import utils.SysmlUtils;
 
 import java.io.FileInputStream;
@@ -14,14 +16,14 @@ public class App {
         long start = System.currentTimeMillis();
 
         org.sparx.Repository r = new org.sparx.Repository();
-        r.OpenFile("D:\\code-project\\SysML2OWL\\src\\main\\resources\\sysml.eapx");
+        r.OpenFile(PropertiesReader.getProperty("SysML_path"));
         System.out.println("Load EA file...");
         Package modelPackage = r.GetModels().GetAt((short) 0);
         Package iof = modelPackage.GetPackages().GetByName("IOF");
 //        System.out.println("Processing Package: " + iof.GetName());
 
         OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
-        String filePath = "D:\\code-project\\SysML2OWL\\src\\main\\resources\\base.owl";
+        String filePath = PropertiesReader.getProperty("base_owl_path");
         try {
             model.read(new FileInputStream(filePath), OwlUtils.getSourceName(), "RDF/XML");
         } catch (IOException ioe) {
@@ -31,10 +33,11 @@ public class App {
         ObjectProperty hasOutput = OwlUtils.createObjectProperty(model, null, null, "hasOutput");
         ObjectProperty hasInput = OwlUtils.createObjectProperty(model, null, null, "hasInput");
 
-        SysmlUtils.processPackage(r, iof, model, null);
+        Sysml2owl.processPackage(r, iof, model, null);
 
         System.out.println("Number of Package: " + SysmlUtils.packageCount);
         System.out.println("Number of Block: " + SysmlUtils.blockCount);
+        System.out.println("Number of Actor: " + SysmlUtils.actorCount);
         System.out.println("Number of Activity: " + SysmlUtils.activityCount);
         r.CloseFile();
         r.Exit();

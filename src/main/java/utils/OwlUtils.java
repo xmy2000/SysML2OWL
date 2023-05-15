@@ -4,23 +4,22 @@ import org.apache.jena.ontology.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFWriterI;
 import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.vocabulary.XSD;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class OwlUtils {
-    public static String getSourceName() {
-        return "http://www.semanticweb.org/xmy/ontologies/2023/4/sysml2owl";
+    public static String getSourceName() throws IOException {
+        return PropertiesReader.getProperty("owl_source_url");
     }
 
-    public static String getNameSpace() {
+    public static String getNameSpace() throws IOException {
         return getSourceName() + "#";
     }
 
     public static void ontModel2Owl(OntModel ontModel) throws IOException {
         //输出owl文件到文件系统
-        String filepath = "src/main/resources/out/sysml2owl.owl";
+        String filepath = PropertiesReader.getProperty("owl_out_path");
         FileOutputStream fileOS = new FileOutputStream(filepath);
         RDFWriterI writer = ontModel.getWriter("RDF/XML");
         writer.setProperty("showXMLDeclaration", "true");
@@ -29,7 +28,7 @@ public class OwlUtils {
         fileOS.close();
     }
 
-    public static OntModel owl2OntModel(String path) {
+    public static OntModel owl2OntModel(String path) throws IOException {
         //设置本体的命名空间
         String SOURCE = getSourceName();
         OntDocumentManager ontDocMgr = new OntDocumentManager();
